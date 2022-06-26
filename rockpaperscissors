@@ -1,0 +1,105 @@
+
+
+# Rock, Paper, Scissors 
+
+import random 
+
+# Game will be best 2 / 3 
+
+print('Best of 3 rounds: ')
+
+point1 = 0
+point2 = 0
+rounds = 0
+
+# Your choices are Rock, Paper or Scissors 
+
+valid_options = ['Rock','Paper','Scissors']
+
+# If both players points are less than 2 than the game will continue until a player reaches 2 points 
+
+while point1 < 2 and point2 < 2:
+    
+    rounds += 1 
+    print(f'\nRound {rounds}\n')
+    
+    entered_valid_option = False
+    
+    while entered_valid_option == False:
+        player_one = input('Player One Choose: ').title()
+        player_two = random.choice(valid_options).title()
+        print(f'Player Two Choose: {player_two}')
+        if player_one in valid_options and player_two in valid_options:
+            entered_valid_option = True
+        else:
+            print("\n Enter a Valid Choice \n")
+    if player_one == player_two:
+        print('\nIt\'s a tie, play again!\n') 
+        print(f'Player One:{point1}')
+        print(f'Player Two:{point2}')
+    elif player_one == 'Rock' and player_two == 'Paper': 
+        print('\nPaper Wins!\n')
+        point2 += 1 
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_two == 'Rock' and player_one == 'Paper': 
+        print('\nPaper Wins!\n')
+        point1 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_one == 'Rock' and player_two == 'Scissors':
+        print('\nRock Wins!\n')
+        point1 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_two == 'Rock' and player_one == 'Scissors':
+        print('\nRock Wins!\n')
+        point2 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_one == 'Paper' and player_two == 'Scissors':
+        print('\nScissors Wins!\n')
+        point2 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_two == 'Paper' and player_one == 'Scissors':
+        print('\nScissors Wins!\n')
+        point1 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_one == 'Paper' and player_two == 'Rock':
+        print('\nPaper Wins!\n')
+        point1 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_two == 'Paper' and player_one == 'Rock':
+        print('\nPaper Wins!\n')
+        point2 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_one == 'Scissors' and player_two == 'Rock':
+        print('\nRock Wins!\n')
+        point2 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_two == 'Scissors' and player_one == 'Rock':
+        print('\nRock Wins!\n')
+        point1 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    elif player_one == 'Scissors' and player_two == 'Paper':
+        print('\nScissors Wins!\n')
+        point1 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+    else:
+        print('\nScissors Wins!\n')
+        point2 += 1
+        print(f'Player One: {point1}')
+        print(f'Player Two: {point2}')
+if point1 == 2:
+    print('\nPLAYER ONE WINS!')
+else:
+    print('\nPLAYER TWO WINS!') 
+        
+        
